@@ -1,0 +1,182 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title></title> 
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+	<meta charset="GBK"/>
+	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/theme/theme.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/mobiscroll.custom-2.5.0.min.css" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mobileinit.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/fastclick.js"></script> 
+	<script src="js/mobiscroll.js"></script> 
+</head> 
+<body>
+	<!-- page -->
+	<div data-role="page">
+		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
+			<h2>江苏地税</h2>
+			<div><a href="#" class="logo"><img src="images/logo.gif" /></a></div>
+
+			<a href="#signOutDialog" data-icon="sign_out" id="sign-out" data-iconpos="notext" class="ui-btn-right" data-rel="popup" data-position-to="window" data-transition="none">
+			</a>
+			<div data-role="popup" id="signOutDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%;" class="ui-corner-all">
+				<div style="margin: 0px 5px; text-align: center">
+					<h3>用户注销</h3>
+					<div class="navbar" style="height: 1px"></div>
+				</div>
+				<div data-role="content" class="ui-corner-bottom ui-content">
+					<p style="color:#999999; font-size: 14px">注销后您需要再次登陆才能查看您的税务信息，是否注销用户？</p>
+					<div style="text-align: center">
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消</a></div>
+							<div class="ui-block-b"><a href="login.html" data-role="button"  data-transition="flow" class="button-success">确定</a></div>
+						</div><!-- /grid-a -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- content-->
+		<div data-role="content">
+			<div style="margin: 10px 0px; padding:5px;">
+				<b>纳税人基本信息</b>
+				<div class="navbar" style="height: 1px; margin-top: 5px;"></div>
+			</div>
+			<ul class="setting-content frame-white">
+				<li> 
+					<p><span class="title">税人识别号 </span><span class="content">123132132213312312132</span></p>
+				</li>
+				<li> 
+					<p><span class="title">纳税人名称 </span><span class="content">江苏大唐电子产品有限公司</span></p>
+				</li>
+				<li> 
+					<p><span class="title">纳税人状态</span><span class="content">已启用</span></p>
+				</li>
+				<li> 
+					<p><span class="title">主管税务机关名称 </span><span class="content">江苏地税</span></p>
+				</li>
+				<li> 
+					<p><span class="title">使用地址</span><span class="content">地址</span></p>
+				</li>
+				
+			</ul>
+			<div style="margin: 10px 0px; padding:5px;">
+				<b>纳税人发票信息</b>
+				<div class="navbar" style="height: 1px; margin-top: 5px;"></div>
+			</div>
+			<ul class="frame-white summary">
+				<li class="border-dashed">
+					<img src="images/count1.png" alt="">
+					<div><p class="summary-title">今日开票金额</p>
+						<p class="summary-amount-b" style="color: #8E44AD">￥2200000000.00</p>
+					</div>
+				</li>
+				<li class="border-dashed">
+					<p class="summary-title">今日开票：<span class="pot" style="font-size: 16px; margin-right: 10px; background-color: #8E44AD">5000</span>张</p>
+				</li>
+				<li class="border-dashed">
+					<img src="images/count1.png" alt="">
+					<div>
+						<p class="summary-title">本月开票金额</p>
+						<p class="summary-amount-b" style="color: #E74C3C">￥2200000000.00</p>
+					</div>
+				</li>
+				<li class="border-dashed">
+					<p class="summary-title">本月开票：<span class="pot" style="font-size: 16px; margin-right: 10px; background-color: #E74C3C">500000</span>张</p>
+				</li>
+				<li class="border-dashed">
+					<img src="images/count2.png" alt="">
+					<div>
+						<p class="summary-title">本月限额</p>
+						<p class="summary-amount-a">￥220000000.00</p>
+					</div>
+				</li>
+				<li class="border-dashed">
+					<img src="images/count2.png" alt="">
+					<div>
+						<p class="summary-title">已使用限额</p>
+						<p class="summary-amount-b">￥2200000000.00</p>
+					</div>
+
+				</li>
+
+				<li>
+					<p class="summary-title">发票卷剩余： <span class="pot" style="font-size: 16px; margin-right: 10px">500000</span>张</p>
+				</li>
+			</ul>
+			<ul class="box-grid">
+				<li> 
+					<a href="#queryFPMX" data-rel="popup" data-position-to="window" data-transition="pop"  style="background: #2980B9">
+						<img src="images/ic_mx.png"/>
+						<h3><span>单张发票明细查询</span></h3>
+					</a>
+				</li>
+				<li> 
+					<a href="list_fpmx_bak.html"  style="background: #E74C3C">
+						<img src="images/ic_query.png"/>
+						<h3>今日发票明细查询</h3>
+					</a>
+				</li>
+				<li> 
+					<a href="fphz.html" style="background: #E67E22">
+						<img src="images/ic_hzxx.png"/>
+						<h3><span>今日汇总数据查询</span></h3>
+					</a>
+				</li>
+				<li> 
+					<a href="fphz.html" style="background: #8E44AD">
+						<img src="images/ic_hzxx2.png"/>
+						<h3>当月汇总数据查询</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-id="myFooter" data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar" data-iconpos="top" class="navbar"> 
+				<ul>
+					<li> <a href="queryFPMX.html" class="ui-btn-active ui-state-persist" id="icons-1" data-icon="custom" data-iconshadow="false">明细数据</a></li>
+					<li> <a href="queryFPHZ.html" id="icons-2" data-icon="custom" data-iconshadow="false">汇总数据</a></li>
+					<li> <a href="pyxx.html" id="icons-3" data-icon="custom" data-iconshadow="false">票源信息</a></li>
+					<li> <a href="queryJBXX.html" id="icons-4" data-icon="custom" data-iconshadow="false">基本信息</a></li>
+					<li> <a href="about.html" id="icons-more" data-icon="custom" data-iconshadow="false">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div data-role="popup" id="queryFPMX" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%;" class="ui-corner-all">
+			<div style="margin: 0px 5px; text-align: center">
+				<h3>查询单张发票明细</h3>
+				<div class="navbar" style="height: 1px"></div>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<p style="color:#999999; font-size: 14px">根据发票代码、发票号码查询该张发票的发票明细</p>
+				<div style="text-align: center">
+					<form>
+						<div>
+							<label for="fpdm" class="ui-hidden-accessible">发票代码:</label>
+							<input type="text" name="fpdm" id="fpdm" value="" placeholder="发票代码" >
+							<label for="fphm"  class="ui-hidden-accessible">发票号码:</label>
+							<input type="text" name="fphm" id="fphm" value="" placeholder="发票号码" >
+						</div>
+					
+					<div class="ui-grid-a">
+						<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消搜索</a></div>
+						<div class="ui-block-b"><a href="fpmx.html" data-role="button"  class="button-success">搜索发票</a></div>
+					</div><!-- /grid-a -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page -->
+</body>
+
+
+</html>

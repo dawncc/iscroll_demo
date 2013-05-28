@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title></title> 
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+	<meta charset="GBK"/>
+	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/theme/theme.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- <link rel="stylesheet" href="css/styles-custom.css" /> -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mobileinit.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/fastclick.js"></script> 
+</head> 
+<body>
+	<!-- page -->
+	<div data-role="page" >
+		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
+			<h2>发票汇总</h2>
+			<a href="index.html"  data-icon="toindex" data-iconpos="notext" class="ui-btn-left"></a>
+			<a href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-right">
+			</a>
+		</div>
+		<!-- content-->
+		<div data-role="content">
+			<div class="frame-white summary fphz">
+				<div style="margin: 5px 0px; padding:5px;">
+					<b>2013/5/17<span style="margin:0 10px;">~</span>2013/5/17</b>
+					<div class="navbar" style="height: 1px ;margin-top:5px;"></div>
+				</div>
+				<div class="border-dashed">
+					<img src="images/goods1.png" alt="">
+					<div><p class="summary-title">开票金额</p>
+						<p class="summary-amount-b" style="color: #F39C12">￥2200000000.00</p>
+					</div>
+				</div>
+				<div class="border-dashed">
+					<p class="summary-title">开票张数： <span class="pot" style="font-size: 16px; margin-right: 10px; background-color: #F39C12">500000</span>张</p>
+				</div>
+				<div class="border-dashed">
+					<img src="images/goods1.png" alt="">
+					<div><p class="summary-title">红冲金额</p>
+						<p class="summary-amount-b" style="color: #E74C3C">￥2200000000.00</p>
+					</div>
+				</div>
+				<div class="border-dashed">
+					<p class="summary-title"> 红冲张数： <span class="pot" style="font-size: 16px; margin-right: 10px; background-color: #E74C3C">500</span>张</p>
+				</div>
+				<div>
+					<p class="summary-title"> 废票张数： <span class="pot" style="font-size: 16px; margin-right: 10px; background-color: #34495E">5</span>张</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page -->
+</body>
+</html>

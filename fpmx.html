@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title></title> 
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+	<meta charset="GBK"/>
+	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/theme/theme.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- <link rel="stylesheet" href="css/styles-custom.css" /> -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mobileinit.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/fastclick.js"></script> 
+</head> 
+<body>
+	<!-- page -->
+	<div data-role="page" >
+		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
+			<h2>发票明细</h2>
+			<a data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse"></a>
+			<a href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-right">
+			</a>
+		</div>
+		<!-- content-->
+		<div data-role="content">
+			<div class="fpmx">
+				<header>
+					<img src="images/bg_fpmx_header.png" alt="">
+				</header>
+				<div id="container">
+					<table class="fpmx-header">
+						<tr><td>发票代码</td> <td>11233544566</td></tr>
+						<tr><td>发票号码</td> <td>00001234</td></tr>
+					</table>
+					<div class="fpmx-content">
+						<p>客户名称：<span>江苏大唐科技有限公司</span></p>
+						<p>客户手机号：<span>13854123544</span></p>
+						<p>开票日期：<span>2013/05/17</span>
+							<span style="margin-left: 25px">开票人：</span><span>01
+						</span></p>
+						<p>机器编号：<span>0070001292447</span></p>
+						<p>收款方识别号：<span>32079998852154</span></p>
+						<p>收款单位名称：<span>南京市某公司</span></p>
+
+						<table class="fpmx-item">
+							<tr><th>名称</th><th>单价</th><th>数量</th><th>金额</th></tr>
+							<tr><td>餐饮asda</td><td>10.00</td><td>200</td><td>2300.00</td></tr>
+							<tr><td>餐饮</td><td>1000.00</td><td>200</td><td>2000.00</td></tr>
+							<tr><td>餐饮</td><td>100.00</td><td>200</td><td>33000.00</td></tr>
+						</table>
+						<p>合计金额（小写）：<span style="color:red">￥1000.00</span></p>
+						<p>合计金额（大写）：<span>十块钱</span></p>
+						<p>税控码：<span>0000000000000</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page -->
+</body>
+</html>

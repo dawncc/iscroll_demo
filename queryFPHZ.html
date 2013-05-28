@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title></title> 
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+	<meta charset="GBK"/>
+	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/theme/theme.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mobileinit.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/fastclick.js"></script> 
+</head> 
+<body>
+	<!-- page -->
+	<div data-role="page" >
+		
+
+
+		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
+			<h2>查询发票汇总</h2>
+			<a data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse"></a>
+			<a href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-right">
+			</a>
+		</div>
+		<!-- content-->
+		<div data-role="content">
+			<ul data-role="listview" data-theme="a">
+				<li> 
+					<a href="#queryFPHZ4date" data-rel="popup" data-position-to="window" data-transition="nonee" >
+						<img src="images/goods1.png" alt="">
+						<h3>按时间段查询</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#queryFPHZ4no" data-rel="popup" data-position-to="window" data-transition="none" >
+						<img src="images/goods2.png" alt="">
+						<h3>按号码段查询</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#queryFPHZ4today" data-rel="popup" data-position-to="window" data-transition="none" >
+						<img src="images/goods4.png" alt="">
+						<h3>日汇总查询</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#queryFPHZ4month" id="clicka" data-rel="popup" data-position-to="window" data-transition="none" >
+						<img src="images/goods3.png" alt="">
+						<h3>月汇总查询</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+
+		<div data-role="popup" id="queryFPHZ4date" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%; width:100%;" class="ui-corner-all">
+			<link rel="stylesheet" href="css/mobiscroll.custom-2.5.0.min.css" />
+			<script src="js/mobiscroll.js"></script> 
+			<script type="text/javascript">
+			$(document).bind("pageinit",function(){
+				$('#jzrq').val('').scroller('destroy').scroller({
+					preset : "date",
+					theme: 'jqm',
+					display: 'modal',
+					mode: 'scroller',
+					dateOrder: 'mmD ddyy',
+					minDate: new Date(2000,1,01,00,00), 
+					maxDate: new Date(2220,12,31,24,59), 
+					dateFormat: 'yyyy-mm-dd',
+				});    
+				$('#qsrq').val('').scroller('destroy').scroller({
+					preset : "date",
+					theme: 'jqm',
+					display: 'modal',
+					mode: 'scroller',
+					dateOrder: 'mmD ddyy',
+					minDate: new Date(2000,1,01,00,00), 
+					maxDate: new Date(2220,12,31,24,59), 
+					dateFormat: 'yyyy-mm-dd',
+				}); 
+			});
+			
+			</script>
+			<div style="margin: 0px 5px; text-align: center">
+				<h3>查询时间段内发票汇总</h3>
+				<div class="navbar" style="height: 1px"></div>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<p style="color:#999999; font-size: 14px">根据起始日期、截止日期查询该时间段内所有发票的汇总信息</p>
+				<div style="text-align: center">
+					<form id="form4date">
+						<div>
+							<label for="qsrq" class="ui-hidden-accessible">起始日期:</label>
+							<input type="text"  name="qsrq" id="qsrq" value="" placeholder="起始日期" >
+							<label for="jzrq" class="ui-hidden-accessible">截止日期:</label>
+							<input type="text" name="jzrq" id="jzrq" value="" placeholder="截止日期" >
+						</div>
+
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><a href="queryFPHZ.html" data-role="button" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-b"><a href="fphz.html" id="query4date" data-role="button"  class="button-success">搜索发票</a></div>
+						</div><!-- /grid-a -->
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="popup" id="queryFPHZ4no" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%; width:100%" class="ui-corner-all">
+			<div style="margin: 0px 5px; text-align: center">
+				<h3>查询号码段内汇总</h3>
+				<div class="navbar" style="height: 1px"></div>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<p style="color:#999999; font-size: 14px">根据发票起始票号、发票截止票号查询该号码段内所有发票的汇总信息</p>
+				<div style="text-align: center">
+					<form id="form4no">
+						<div>
+							<label for="fpdm4no" class="ui-hidden-accessible">发票代码:</label>
+							<input type="text"  name="fpdm4no" id="fpdm4no" value="" placeholder="发票代码" >
+							<label for="qsph" class="ui-hidden-accessible">起始票号:</label>
+							<input type="text"  name="qsph" id="qsph" value="" placeholder="起始票号" >
+							<label for="jzph" class="ui-hidden-accessible">截止票号:</label>
+							<input type="text" name="jzph" id="jzph" value="" placeholder="截止票号" >
+						</div>
+
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-b"><a href="fphz.html" id="query4no" data-role="button"  class="button-success">搜索发票</a></div>
+						</div><!-- /grid-a -->
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="popup" id="queryFPHZ4today" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%; width:100%" class="ui-corner-all">
+			<div style="margin: 0px 5px; text-align: center">
+				<h3>查询日汇总</h3>
+				<div class="navbar" style="height: 1px"></div>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<p style="color:#999999; font-size: 14px">查询今日所有发票的汇总信息</p>
+				<form id="form4today">
+					<div style="text-align: center">
+						<h2>2013/5/21</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-b"><a href="fphz.html" id="query4today" data-role="button"  class="button-success">搜索发票</a></div>
+						</div><!-- /grid-a -->
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div data-role="popup" id="queryFPHZ4month" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%;width:100%" class="ui-corner-all">
+			<div style="margin: 0px 5px; text-align: center">
+				<h3>查询月汇总</h3>
+				<div class="navbar" style="height: 1px"></div>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<p style="color:#999999; font-size: 14px">查询本月所有发票的汇总信息</p>
+				<div style="text-align: center">
+					<form id="form4count">
+
+						<h2>2013/5</h2>
+						
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-b"><a href="fphz.html" data-role="button" id="query4count"  class="button-success">搜索发票</a></div>
+						</div><!-- /grid-a -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- /page -->
+</body>
+</html>
