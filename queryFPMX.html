@@ -12,7 +12,6 @@
 	<script src="js/mobileinit.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
 	<script src="js/fastclick.js"></script> 
-	<script src="js/mobiscroll.js"></script> 
 	
 </head> 
 <body>
@@ -21,7 +20,8 @@
 		
 		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
 			<h2>查询发票明细</h2>
-			<a data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse"></a>
+			<a href="index.html" data-icon="toindex" data-iconpos="notext" class="ui-btn-left">
+			</a>
 			<a href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-right">
 			</a>
 		</div>
@@ -55,7 +55,7 @@
 			</ul>
 		</div>
 
-			<div data-role="popup" id="queryFPMX4date" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%; width:100%;" class="ui-corner-all">
+		<div data-role="popup" id="queryFPMX4date" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:100%; width:100%;" class="ui-corner-all">
 			<script src="js/mobiscroll.js"></script> 
 			<script type="text/javascript">
 			$(document).bind("pageinit",function(){
@@ -64,26 +64,36 @@
 					theme: 'jqm',
 					display: 'modal',
 					mode: 'scroller',
-					dateOrder: 'mmD ddyy',
+					dateOrder: 'yymmdd',
 					dateFormat: 'yyyy-mm-dd',
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					setText: '确定',
+					cancelText: '取消',
 				});    
-					$('#qsrq').val('').scroller('destroy').scroller({
+				$('#qsrq').val('').scroller('destroy').scroller({
 					preset : "date",
 					theme: 'jqm',
 					display: 'modal',
 					mode: 'scroller',
-					dateOrder: 'mmD ddyy',
+					dateOrder: 'yymmdd',
 					dateFormat: 'yyyy-mm-dd',
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					setText: '确定',
+					cancelText: '取消',
 				}); 
 
 			});
 			</script>			
 			<div style="margin: 0px 5px; text-align: center">
-				<h3>查询时间段内发票汇总</h3>
+				<h3>查询时间段内发票明细</h3>
 				<div class="navbar" style="height: 1px"></div>
 			</div>
 			<div data-role="content" class="ui-corner-bottom ui-content">
-				<p style="color:#999999; font-size: 14px">根据起始日期、截止日期查询该时间段内所有发票的汇总信息</p>
+				<p style="color:#999999; font-size: 14px">根据起始日期、截止日期查询该时间段内所有发票的明细信息</p>
 				<div style="text-align: center">
 					<form id="form4date">
 						<div>
@@ -94,7 +104,7 @@
 						</div>
 
 						<div class="ui-grid-a">
-							<div class="ui-block-a"><a href="#" data-role="button"  data-rel="back" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-a"><a href="queryFPMX.html" data-ajax="false" data-role="button"  class="button-cancel">取消搜索</a></div>
 							<div class="ui-block-b"><a href="fphz.html" id="query4date" data-role="button"  class="button-success">搜索发票</a></div>
 						</div><!-- /grid-a -->
 					</form>

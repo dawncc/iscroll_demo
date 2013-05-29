@@ -21,7 +21,9 @@
 
 		<div data-role="header" data-id="myHeader" data-position="fixed"  data-tap-toggle="false">
 			<h2>查询发票汇总</h2>
-			<a data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse"></a>
+			<!-- <a data-icon="back" data-rel="back" data-iconpos="notext" data-direction="reverse"></a> -->
+			<a href="index.html" data-icon="toindex" data-iconpos="notext" class="ui-btn-left">
+			</a>
 			<a href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-right">
 			</a>
 		</div>
@@ -61,25 +63,31 @@
 			<script src="js/mobiscroll.js"></script> 
 			<script type="text/javascript">
 			$(document).bind("pageinit",function(){
-				$('#jzrq').val('').scroller('destroy').scroller({
+				$('#jzrq1').val('').scroller('destroy').scroller({
 					preset : "date",
 					theme: 'jqm',
 					display: 'modal',
 					mode: 'scroller',
-					dateOrder: 'mmD ddyy',
-					minDate: new Date(2000,1,01,00,00), 
-					maxDate: new Date(2220,12,31,24,59), 
+					dateOrder: 'yymmdd',
 					dateFormat: 'yyyy-mm-dd',
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					setText: '确定',
+					cancelText: '取消',
 				});    
-				$('#qsrq').val('').scroller('destroy').scroller({
+				$('#qsrq1').val('').scroller('destroy').scroller({
 					preset : "date",
 					theme: 'jqm',
 					display: 'modal',
 					mode: 'scroller',
-					dateOrder: 'mmD ddyy',
-					minDate: new Date(2000,1,01,00,00), 
-					maxDate: new Date(2220,12,31,24,59), 
+					dateOrder: 'yymmdd',
 					dateFormat: 'yyyy-mm-dd',
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					setText: '确定',
+					cancelText: '取消',
 				}); 
 			});
 			
@@ -93,14 +101,14 @@
 				<div style="text-align: center">
 					<form id="form4date">
 						<div>
-							<label for="qsrq" class="ui-hidden-accessible">起始日期:</label>
-							<input type="text"  name="qsrq" id="qsrq" value="" placeholder="起始日期" >
-							<label for="jzrq" class="ui-hidden-accessible">截止日期:</label>
-							<input type="text" name="jzrq" id="jzrq" value="" placeholder="截止日期" >
+							<label for="qsrq1" class="ui-hidden-accessible">起始日期:</label>
+							<input type="text"  name="qsrq1" id="qsrq1" value="" placeholder="起始日期" >
+							<label for="jzrq1" class="ui-hidden-accessible">截止日期:</label>
+							<input type="text" name="jzrq1" id="jzrq1" value="" placeholder="截止日期" >
 						</div>
 
 						<div class="ui-grid-a">
-							<div class="ui-block-a"><a href="queryFPHZ.html" data-role="button" class="button-cancel">取消搜索</a></div>
+							<div class="ui-block-a"><a href="queryFPHZ.html" data-role="button" class="button-cancel" data-ajax="false">取消搜索</a></div>
 							<div class="ui-block-b"><a href="fphz.html" id="query4date" data-role="button"  class="button-success">搜索发票</a></div>
 						</div><!-- /grid-a -->
 					</form>
